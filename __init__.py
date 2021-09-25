@@ -1,8 +1,6 @@
+from .function import _handler
 import signal
 import sys
-
-def _handler(signum, frame):
-	raise RuntimeError
 
 def exit_on_enter(timeout=5):
 	signal.signal(signal.SIGALRM, _handler)
