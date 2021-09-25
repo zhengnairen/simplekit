@@ -16,3 +16,12 @@ while True:
 		sleep(0.1)
 	sk.exit_on_enter(timeout=10)
 ```
+
+## Reload modules by name
+
+```python
+import numpy
+import simplekit as sk
+
+sk.reload_module('numpy', verbose=2)
+```
