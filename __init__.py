@@ -16,6 +16,12 @@ def exit_on_enter(timeout=5):
 		sys.exit(0)
 	signal.alarm(0)
 
+def generate_version_number(prefix='v'):
+	timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+	suffix = random.randint(1, 99)
+	version_number = f'{prefix}{timestamp}{suffix:02d}'
+	return version_number
+
 def reload_module(name, verbose=0):
 	v_list = []
 	for k, v in sys.modules.items():
