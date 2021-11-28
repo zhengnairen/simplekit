@@ -1,4 +1,5 @@
 from .function import _handler
+import datetime as dt
 import importlib
 import signal
 import sys
@@ -17,7 +18,7 @@ def exit_on_enter(timeout=5):
 	signal.alarm(0)
 
 def generate_version_number(prefix='v'):
-	timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+	timestamp = dt.datetime.now().strftime('%Y%m%d%H%M%S')
 	suffix = random.randint(1, 99)
 	version_number = f'{prefix}{timestamp}{suffix:02d}'
 	return version_number
